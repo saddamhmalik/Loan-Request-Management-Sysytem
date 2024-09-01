@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminLoanRequestController;
+use App\Http\Controllers\AdminNotificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,9 @@ Route::middleware(['auth:admin'])->prefix('/admin')->group(function () {
     Route::resource('loan_request', AdminLoanRequestController::class)->only([
         'index', 'show', 'update', 'destroy'
     ])->name('index','admin.loan_requests');
-//    Route::get('/loan_request', [AdminLoanRequestController::class, 'getLoanRequests'])->name('admin.loan_requests');
-//    Route::get('/loan_request/{id}', [AdminLoanRequestController::class, 'getLoanRequest'])->name('admin.loan_request');
-//    Route::put('/loan_request_update/{id}', [AdminLoanRequestController::class, 'updateLoanRequest'])->name('admin.update_loan_request');
+
+    Route::post('/notifications/read', [AdminNotificationController::class, 'markAsRead'])->name('admin.notifications.read');
+
 });
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
