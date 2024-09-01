@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-md-3 mb-3">
                 <div class="card shadow-lg">
-                    <a href="{{ url('/loan-requests') }}" class="text-decoration-none">
+                    <a href="{{  route('admin.loan_requests') }}" class="text-decoration-none">
                         <div class="card-body d-flex align-items-start">
                             <div class="me-3 icon-container">
                                 <i class="fa-solid fa-file icon-lg"></i>
@@ -62,7 +62,7 @@
 
             <div class="col-md-3 mb-3">
                 <div class="card shadow-lg">
-                    <a href="{{ url('/approved') }}" class="text-decoration-none">
+                    <a href="{{ route('admin.loan_requests', ['status' => 'approved']) }}" class="text-decoration-none">
                         <div class="card-body d-flex align-items-start">
                             <div class="me-3 icon-container ">
                                 <i class="fa-solid fa-check icon-lg icon-approved"></i>
@@ -78,7 +78,7 @@
 
             <div class="col-md-3 mb-3">
                 <div class="card shadow-lg">
-                    <a href="{{ url('/pending') }}" class="text-decoration-none">
+                    <a href="{{ route('admin.loan_requests', ['status' => 'pending']) }}" class="text-decoration-none">
                         <div class="card-body d-flex align-items-start">
                             <div class="me-3 icon-container">
                                 <i class="fa-solid fa-clock icon-lg icon-pending"></i>
@@ -94,7 +94,7 @@
 
             <div class="col-md-3 mb-3">
                 <div class="card shadow-lg">
-                    <a href="{{ url('/blocked') }}" class="text-decoration-none">
+                    <a href="{{ route('admin.loan_requests', ['status' => 'rejected']) }}" class="text-decoration-none">
                         <div class="card-body d-flex align-items-start">
                             <div class="me-3 icon-container">
                                 <i class="fa-solid fa-user-slash icon-lg icon-rejected"></i>
